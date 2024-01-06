@@ -7,7 +7,7 @@ This repository includes a MATLAB codes and datasets used for relative radiometr
 ## Overview
 The MATLAB code implements the relative radiometric normalization methods for unregistered satellite image pairs based on the WSST-SURF detector-descriptors, presented in our papers. 
 
-![Test Image 1]([https://github.com/ArminMoghimi/Keypoint-based-Relative-Radiometric-Normalization-RRN-method/blob/main](https://github.com/ArminMoghimi/Tensor-based-keypoint-detection/edit/main/Workflow.jpg)
+![Test Image 1]([[https://github.com/ArminMoghimi/Keypoint-based-Relative-Radiometric-Normalization-RRN-method/blob/main](https://github.com/ArminMoghimi/Tensor-based-keypoint-detection/blob/main/Workflow.jpg)]
 For code and datasets, see supplementary material.
 
 ## Dependencies and Environment
