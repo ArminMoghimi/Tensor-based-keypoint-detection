@@ -72,7 +72,7 @@ figure, imshow(uint8(Normalized_Image(:,:,1:3)))
 title('Normalized Subject Image')
 
 %% Optimization process; find Mask for No data in reference image
-Mask1 = I22(:,:,1)+1 > 0;
+Mask1 = I22(:,:,1) > 0;
 Mask = imcomplement(im_new(:,:,1) == 0);
 Mask = Mask1 .* Mask;
 im_lwir1 = Mask .* (double(I22) + 0.025);
@@ -90,10 +90,43 @@ ptsObj1_test = reshape(ptsObj1_test, m1 * m2, m3);
 
 Num = 10000;
 
-[normalizedImg_train, R_squared, slope, intercept, fitParameters] = RCS_RegressionTRR(ptsScene1_test, ptsObj1_test, im_new, Num);
+[normalizedImg_train, R_squared, slope, intercept, fitParameters] = RCS_RegressionTRR(ptsScene1_test, ptsObj1_test, im_new,im_lwir1, Num);
 [normalizedImg_train1, R_squared, slope, intercept, fitParameters] = RCS_RegressionGA37(ptsScene1_test, ptsObj1_test, im_new, Num);
-
-%%%%%%%%%%%%% RMSE evaluation
+[normalizedImg_ransack] = RCS_RegressionRansack(ptsScene1_test, ptsObj1_test, abs(im_new), Num);
+ [normalizedImg_linear] = RCS_Regression12(ptsScene1_test, ptsObj1_test, abs(im_new), Num);
+%%%%%%%%%%%% RMSE evaluation
 [rmseValues2, avgRMSE2] = calculateAverageRMSE(double(im_new), double(im_lwir1(:,:,1:m3)), Test)
 [rmseValues3, avgRMSE3] = calculateAverageRMSE(double(normalizedImg_train), double(im_lwir1(:,:,1:m3)), Test)
 [rmseValues4, avgRMSE4] = calculateAverageRMSE(normalizedImg_train1, double(im_lwir1(:,:,1:m3)), Test)
+[rmseValues4, avgRMSE5] = calculateAverageRMSE(normalizedImg_ransack, double(im_lwir1(:,:,1:m3)), Test)
+[rmseValues4, avgRMSE6] = calculateAverageRMSE(normalizedImg_linear, double(im_lwir1(:,:,1:m3)), Test)
+
+[rmseValues2, avgRMSE2;rmseValues3, avgRMSE3;rmseValues4, avgRMSE4;rmseValues4, avgRMSE5]
+
+
+% Num = [1000,2000,3000,4000,5000,6000,7000,8000,9000,10000,11000,12000,13000,14000,15000];
+% RMSE_TRR = zeros(1, 15); % Preallocate the RMSE_TRR array
+% RMSE_GA = zeros(1, 15); % Preallocate the RMSE_GA array
+% time_data = zeros(1, 15); % Preallocate the time array
+% 
+% for i = 1:15
+%     % Assuming RCS_RegressionTRR and calculateAverageRMSE functions are defined elsewhere
+% 
+%     [normalizedImg_train, R_squared, slope, intercept, fitParameters] = RCS_RegressionTRR(ptsScene1_test, ptsObj1_test, im_new,im_lwir1, Num(i));
+% 
+%     [normalizedImg_train1, R_squared, slope, intercept, fitParameters] = RCS_RegressionGA37(ptsScene1_test, ptsObj1_test, im_new, Num(i));
+% 
+%     % Assuming Test, im_lwir1, and m3 are defined elsewhere
+%     [~, RMSE_TRR(i)] = calculateAverageRMSE(double(normalizedImg_train), double(im_lwir1(:,:,1:m3)), Test);
+%     [~, RMSE_GA(i)] = calculateAverageRMSE(double(normalizedImg_train1), double(im_lwir1(:,:,1:m3)), Test);
+% end
+% 
+% % Plotting the results with LaTeX font and time on the right axis
+% figure;
+% plot(Num, RMSE_TRR, 'o-', 'LineWidth', 2, 'DisplayName', 'RMSE\_TRR');
+% hold on;
+% plot(Num, RMSE_GA, 's-', 'LineWidth', 2, 'DisplayName', 'RMSE\_GA');
+% xlabel('$\mathrm{Number\ of\ Inliers}$', 'Interpreter', 'latex');
+% ylabel('$\mathrm{Average\ (RMSE)}$', 'Interpreter', 'latex');
+% grid on;
+% legend('show');
