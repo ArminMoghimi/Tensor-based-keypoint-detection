@@ -2,7 +2,7 @@
 
 This repository contains MATLAB codes and datasets utilized for relative radiometric normalization (RRN) of bi-temporal multi-spectral images in the following papers:
 - Armin Moghimi, Turgay Celik & Ali Mohammadzadeh (2022) Tensor-based keypoint detection and switching regression model for relative radiometric normalization of bitemporal multispectral images, International Journal of Remote Sensing, 43:11, 3927-3956, DOI: 10.1080/01431161.2022.2102951) 
--  Armin Moghimi, Turgay Celik & Ali Mohammadzadeh (2024)Optimizing Relative Radiometric Modeling: Fine-tuning strategies using Trust-Region Reflective and Genetic Algorithms for Residual Error Minimization. 
+-  Armin Moghimi, Turgay Celik, Ali Mohammadzadeh, Saied Pirasteh, Jonathan Li (IGARS IEEE 2024)Optimizing Relative Radiometric Modeling: Fine-tuning strategies using Trust-Region Reflective and Genetic Algorithms for Residual Error Minimization. 
 
 ## Overview
 The MATLAB code implements relative radiometric normalization methods for unregistered satellite image pairs based on the WSST-SURF detector-descriptors, as presented in our papers.
