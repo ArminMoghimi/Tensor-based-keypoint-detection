@@ -10,19 +10,22 @@ This dataset is also available in the "Datasets & Opensources" section of # ISPR
 https://www2.isprs.org/commissions/comm3/icwg-3-4a/datasets/
 
 ## Overview
-As presented in our papers, the MATLAB code implements relative radiometric normalization methods for unregistered satellite image pairs based on the WSST-SURF detector descriptors.
+As presented in our papers, the MATLAB code implements relative radiometric normalization methods for unregistered satellite image pairs based on the WSST-SURF detector descriptors. The WSST-SURF has been developed on the great function OPENSURF,  an implementation of SURF (Speeded Up Robust Features)SURF by Dr. Dirk-Jan Kroon (Dirk-Jan Kroon (2024). OpenSURF (including Image Warp) (https://www.mathworks.com/matlabcentral/fileexchange/28300-opensurf-including-image-warp), MATLAB Central File Exchange. 
 
 ![Test Image 1](https://github.com/ArminMoghimi/Tensor-based-keypoint-detection/blob/main/Workflow1.jpg)
 
 For code and datasets, please take a look at the supplementary material.
 
 ## Dependencies and Environment
-The codes are developed and tested in MATLAB R2020a, with both OpenCV.3.4.1 and the VLFeat open-source libraries on a desktop computer with Intel(R) Core (TM) i7 CPU @ 2.40 GHz, 16.00GB RAM, running the Windows 10. To use the codes, you need some prerequisites as follow: 
+The codes are developed and tested in MATLAB R2020a, with both OpenCV.3.4.1 and the VLFeat open-source libraries on a desktop computer with Intel(R) Core (TM) i7 CPU @ 2.40 GHz, 16.00GB RAM, running the Windows 10. To use the codes, you need some prerequisites as follows: 
 - 	MATLAB 2018b or upper
 - 	OpenCV (3.4.1) jsut for cv.affinetransformation
-- 	VLFeat 0.9.21 
+- 	VLFeat 0.9.21  (https://www.vlfeat.org/)
 
 Having the required build tools for Windows and Visual Studio would be best. Please see https://github.com/kyamagu/mexopencv for instructions on downloading and installing OpenCV on your MATLAB software. Also, please see the https://www.vlfeat.org/ for downloading and installing VLFeat 0.9.21.
 
-Getting Started
+## Getting Started
 After installing OpenCV 3.4.1 and VLFeat 0.9.21, it is enough to use only main.m for a quick start.
+## Acknowledgment
+
+I sincerely thank Dr. Dirk-Jan Kroon and Professor Vedaldi for their codes at every research project stage. 
