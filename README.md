@@ -2,7 +2,9 @@
 
 This repository contains MATLAB codes and datasets utilized for relative radiometric normalization (RRN) of bi-temporal multi-spectral images in the following papers:
 - Armin Moghimi, Turgay Celik & Ali Mohammadzadeh (2022) Tensor-based keypoint detection and switching regression model for relative radiometric normalization of bitemporal multispectral images, International Journal of Remote Sensing, 43:11, 3927-3956, DOI: 10.1080/01431161.2022.2102951) 
-- Armin Moghimi, Turgay Celik, Ali Mohammadzadeh, Saied Pirasteh, and Jonathan Li (IGARS IEEE 2024), Optimizing Relative Radiometric Modeling: Fine-tuning strategies using Trust-Region Reflective and Genetic Algorithms for Residual Error Minimization. 
+- Armin Moghimi, Turgay Celik, Ali Mohammadzadeh, Saied Pirasteh, and Jonathan Li (accepted in IGARS IEEE 2024 but not presented), Optimizing Relative Radiometric Modeling: Fine-tuning strategies using Trust-Region Reflective and Genetic Algorithms for Residual Error Minimization.
+
+- Armin Moghimi, Turgay Celik, Ali Mohammadzadeh, Saied Pirasteh, and Jonathan Li (under review in IEEE GRSL 2024), Optimizing Relative Radiometric Modeling: Fine-tuning strategies using Trust-Region Reflective and Genetic Algorithms for Residual Error Minimization. 
 
 ## ISPRS ICWG III/IVa "Disaster Management
 This dataset is also available in the "Datasets & Opensources" section of # ISPRS ICWG III/IVa "Disaster Management" of ISPRS: 
