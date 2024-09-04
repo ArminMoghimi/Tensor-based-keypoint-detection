@@ -14,7 +14,7 @@ https://www2.isprs.org/commissions/comm3/icwg-3-4a/datasets/
 ## Overview
 As presented in our papers, the MATLAB code implements relative radiometric normalization methods for unregistered satellite image pairs based on the WSST-SURF detector descriptors. The WSST-SURF has been developed on the great function OPENSURF,  an implementation of SURF (Speeded Up Robust Features)SURF by Dr. Dirk-Jan Kroon (Dirk-Jan Kroon (2024). OpenSURF (including Image Warp) (https://www.mathworks.com/matlabcentral/fileexchange/28300-opensurf-including-image-warp), MATLAB Central File Exchange. 
 
-![Test Image 1](https://github.com/ArminMoghimi/Tensor-based-keypoint-detection/blob/main/Workflow1.jpg)
+![Test Image 1](https://github.com/ArminMoghimi/Tensor-based-keypoint-detection/blob/main/Workflow11.jpg)
 
 For code and datasets, please take a look at the supplementary material.
 
