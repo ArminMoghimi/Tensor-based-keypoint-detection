@@ -106,7 +106,7 @@ Mask1 = I22(:,:,1) > 0;    % Create a mask for valid data in the Reference image
 Mask = imcomplement(im_new(:,:,1) == 0);  % Create a mask for valid data in the normalized image
 Mask = Mask1 .* Mask;  % Combine masks to find regions with valid data in both images
 im_lwir1 = Mask .* (double(I22) + 0.025); % Apply mask to the Reference image
-[m1, m2, m3] = size(im_lwir1);    % Get the dimensions of the masked image
+[m1, m2, m3] = size(im_lwir1);    % Get the dimensions of the masked reference image
 
 %% CVA image generation 
 % CVA = (sqrt(sum((double(im_new) - double(im_lwir1)).^2, 3)) + 1) .* Mask; % Compute Change Vector Analysis (CVA) image
@@ -119,7 +119,7 @@ ptsScene1_test = reshape(ptsScene1_test, m1 * m2, m3);  % Reshape the masked ima
 ptsObj1_test = Mask2 .* im_new;  % Apply refined mask to the normalized image
 ptsObj1_test = reshape(ptsObj1_test, m1 * m2, m3);  % Reshape the masked normalized image into a 2D matrix
 
-Num = 3000;  % Set the number of samples for regression
+Num = 2*min(m1, m2);  % Set the number of samples for regression
 
 % Perform Regression with Trust-Region Reflective Algorithm (Linear)
 [normalizedImg_trainTRR_Li, R_squared, slope, intercept, fitParameters, Initial_ImageT_Li] = RCS2_RegressionTRR(ptsScene1_test, ptsObj1_test, im_new, im_lwir1, Num, 'linear');
